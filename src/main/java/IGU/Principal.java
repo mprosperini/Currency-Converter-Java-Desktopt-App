@@ -21,7 +21,7 @@ public class Principal extends javax.swing.JFrame {
         
         initComponents();
         //setIconImage(new ImageIcon(getClass().getResource("/resources_imagesnew/mpc.png")).getImage());
-        Image icon = new ImageIcon(this.getClass().getResource("/images/icon.png")).getImage();
+        Image icon = new ImageIcon(this.getClass().getResource("/images/mpc.png")).getImage();
         this.setIconImage(icon);
     }
 
@@ -181,7 +181,7 @@ class BackgroundPanel extends JPanel {
 
     @Override
     public void paint(Graphics g) {
-        backgroundImage = new ImageIcon (getClass().getResource("/images/green006400.png")).getImage();
+        backgroundImage = new ImageIcon (getClass().getResource("/images/blue003366.png")).getImage();
         
         g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
         
