@@ -1,13 +1,15 @@
 package IGU;
 
-import LOGIC.pkg_Currencies.CurrencyConverterLogic;
-import javax.swing.JDialog;
-import javax.swing.JOptionPane;
+import LOGIC.pkg_CurrencyConverter.CurrencyConverterLogic;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class CurrencyConverter extends javax.swing.JFrame {
 
     public CurrencyConverter() {
         initComponents();
+        Image icon = new ImageIcon(this.getClass().getResource("/resources_imagesnew/mpc.png")).getImage();
+        this.setIconImage(icon);
     }
 
     /**
@@ -28,6 +30,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnConvert = new javax.swing.JButton();
         cmbCurrencyTo = new javax.swing.JComboBox<>();
+        btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -36,78 +39,76 @@ public class CurrencyConverter extends javax.swing.JFrame {
 
         cmbCurrencyFrom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "USD", "EUR", "GBP", "CAD", "JPY", "MXN", "COP", "VES" }));
 
-        txtFrom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFromActionPerformed(evt);
+        txtFrom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFromKeyReleased(evt);
             }
         });
 
         jLabel3.setText("FROM:");
 
-        txtTo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtToActionPerformed(evt);
-            }
-        });
-
         jLabel4.setText("TO:");
 
         btnConvert.setText("CONVERT");
-        btnConvert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConvertActionPerformed(evt);
-            }
-        });
 
         cmbCurrencyTo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "USD", "EUR", "GBP", "CAD", "JPY", "MXN", "COP", "VES" }));
+
+        btnCancel.setBackground(new java.awt.Color(255, 102, 102));
+        btnCancel.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancel.setIcon(new javax.swing.ImageIcon("/home/saberx/Documents/icons8-close-25.png")); // NOI18N
+        btnCancel.setText("CANCEL");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 167, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
+                        .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtTo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbCurrencyTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbCurrencyFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(txtFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbCurrencyFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(344, 344, 344)
-                        .addComponent(jLabel2))
+                        .addComponent(jLabel4)
+                        .addGap(39, 39, 39)
+                        .addComponent(txtTo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbCurrencyTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(btnConvert)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnConvert, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnCancel))
+                    .addComponent(jLabel2))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel2)
-                .addGap(99, 99, 99)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbCurrencyFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
+                    .addComponent(txtTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbCurrencyTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(btnConvert)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConvert)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,35 +125,31 @@ public class CurrencyConverter extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFromActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFromActionPerformed
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelActionPerformed
 
-    private void txtToActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtToActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtToActionPerformed
-
-    private void btnConvertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertActionPerformed
-        txtFrom.getText();
-        double txtFromDouble = Double.parseDouble(txtFrom.getText());
-        cmbCurrencyFrom.getSelectedItem();
-        cmbCurrencyTo.getSelectedItem();
+    private void txtFromKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFromKeyReleased
+        String cmbFrom_String = cmbCurrencyFrom.getSelectedItem().toString();
+        String cmbTo_String = cmbCurrencyTo.getSelectedItem().toString();
+        String txtFrom_String = txtFrom.getText();
 
         CurrencyConverterLogic ccLogic = new CurrencyConverterLogic();
-        ccLogic.checkingFields(cmbCurrencyTo.getSelectedItem().toString(), cmbCurrencyFrom.getSelectedItem().toString(),txtFrom.getText());
-        ccLogic.convertToUsd(cmbCurrencyFrom.getSelectedItem().toString(), txtFromDouble);
-        ccLogic.convertTo(cmbCurrencyTo.getSelectedItem().toString(), ccLogic.amountToUsd);
+        double txtFrom_Double = ccLogic.ConvertTxtFromToDouble(txtFrom_String);
+        boolean checkingFields = ccLogic.checkingFields(cmbTo_String, cmbFrom_String, txtFrom_Double);
 
-        txtTo.setText(String.valueOf(String.format("%.2f", ccLogic.amountConverted)));
-
-        
-        System.out.println(cmbCurrencyFrom.getSelectedItem());
-        System.out.println(cmbCurrencyTo.getSelectedItem());
-        System.out.println(cmbCurrencyFrom.getSelectedItem().toString());
-
-    }//GEN-LAST:event_btnConvertActionPerformed
+        if (checkingFields) {
+            ccLogic.convertToUsd(cmbFrom_String, txtFrom_Double);
+            ccLogic.convertToDesiredCurrency(cmbTo_String, ccLogic.amountToUsd);
+            txtTo.setText(String.valueOf(String.format("%.2f", ccLogic.amountConverted)));
+        }else{
+                    txtFrom.setText("");
+                    txtTo.requestFocus(); 
+            }
+    }//GEN-LAST:event_txtFromKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnConvert;
     private javax.swing.JComboBox<String> cmbCurrencyFrom;
     private javax.swing.JComboBox<String> cmbCurrencyTo;

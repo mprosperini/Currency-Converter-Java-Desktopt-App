@@ -1,9 +1,28 @@
 package IGU;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 public class Principal extends javax.swing.JFrame {
 
+    //cg1.1 start
+    BackgroundPanel background = new BackgroundPanel();
+    //cg1.1 end
+    
     public Principal() {
+        
+        //cg1.2 start
+        this.setContentPane(background);
+        //cg1.2 end
+        
         initComponents();
+        //setIconImage(new ImageIcon(getClass().getResource("/resources_imagesnew/mpc.png")).getImage());
+        Image icon = new ImageIcon(this.getClass().getResource("/images/icon.png")).getImage();
+        this.setIconImage(icon);
     }
 
     /**
@@ -15,136 +34,113 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        //cg1.3 start
+        jPanel1 = new BackgroundPanel();
+        lblTittle = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnLogIn = new javax.swing.JButton();
+        btnCurrencyConverter = new javax.swing.JButton();
         btnCalculator = new javax.swing.JButton();
         btnAdministratorOptions = new javax.swing.JButton();
-        btnCreateNewUser = new javax.swing.JButton();
-        btnCurrencyConverter = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
+        lblSubTittle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(950, 520));
+        setSize(new java.awt.Dimension(950, 520));
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jLabel1.setText("BANK PROJECT");
+        //cg1.3 end
+        jPanel1.setMaximumSize(new java.awt.Dimension(700, 600));
+        jPanel1.setMinimumSize(new java.awt.Dimension(950, 520));
+        jPanel1.setPreferredSize(new java.awt.Dimension(950, 520));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblTittle.setFont(new java.awt.Font("Roboto", 1, 48)); // NOI18N
+        lblTittle.setForeground(new java.awt.Color(0, 0, 0));
+        lblTittle.setText("¡Welcome!");
+        lblTittle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(lblTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/lancer5500ryz/Documents/0. MPC/ESTUDIO/2. PROGRAMACION/java/programa/bankproject/src/main/resources/images/cheerful-excited-young-woman-with-mobile-phone-credit-card 500x540.png")); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, -20, 520, 550));
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnLogIn.setBackground(new java.awt.Color(51, 102, 153));
+        btnLogIn.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
+        btnLogIn.setForeground(new java.awt.Color(255, 255, 255));
         btnLogIn.setText("Log In");
+        btnLogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnLogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 166, -1));
 
-        btnCalculator.setText("Calculator");
-        btnCalculator.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalculatorActionPerformed(evt);
-            }
-        });
-
-        btnAdministratorOptions.setText("Administrator Options");
-
-        btnCreateNewUser.setText("Create New User ");
-        btnCreateNewUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateNewUserActionPerformed(evt);
-            }
-        });
-
+        btnCurrencyConverter.setBackground(new java.awt.Color(51, 102, 153));
+        btnCurrencyConverter.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
+        btnCurrencyConverter.setForeground(new java.awt.Color(255, 255, 255));
         btnCurrencyConverter.setText("Currency Converter");
+        btnCurrencyConverter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCurrencyConverter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCurrencyConverterActionPerformed(evt);
             }
         });
+        jPanel2.add(btnCurrencyConverter, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 166, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnCalculator, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLogIn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCreateNewUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCurrencyConverter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnAdministratorOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(btnLogIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCreateNewUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCalculator)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCurrencyConverter)
-                .addGap(34, 34, 34)
-                .addComponent(btnAdministratorOptions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(23, 23, 23))
-        );
+        btnCalculator.setBackground(new java.awt.Color(51, 102, 153));
+        btnCalculator.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
+        btnCalculator.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalculator.setText("Calculator");
+        btnCalculator.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCalculator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculatorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnCalculator, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 166, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/home/saberx/Documents/0. MPC/bankimage.png")); // NOI18N
+        btnAdministratorOptions.setBackground(new java.awt.Color(51, 102, 153));
+        btnAdministratorOptions.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
+        btnAdministratorOptions.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdministratorOptions.setText("Administrator Options");
+        btnAdministratorOptions.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnAdministratorOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 166, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(399, 399, 399)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(221, 221, 221)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
-                .addComponent(jLabel2))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel3)
-                        .addContainerGap(122, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel2))))
-        );
+        btnExit.setBackground(new java.awt.Color(96, 23, 23));
+        btnExit.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("EXIT");
+        btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 166, 31));
+
+        lblSubTittle.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        lblSubTittle.setForeground(new java.awt.Color(0, 0, 0));
+        lblSubTittle.setText("Options:");
+        lblSubTittle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.add(lblSubTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 29));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 190, 200));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCalculatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculatorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCalculatorActionPerformed
-
-    private void btnCreateNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewUserActionPerformed
-        CreateNewUser createNewUserScreen = new CreateNewUser();
-        createNewUserScreen.setVisible(true);
-        createNewUserScreen.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnCreateNewUserActionPerformed
 
     private void btnCurrencyConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrencyConverterActionPerformed
         CurrencyConverter displayCC = new CurrencyConverter();
@@ -152,17 +148,46 @@ public class Principal extends javax.swing.JFrame {
         displayCC.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCurrencyConverterActionPerformed
 
+    private void btnCalculatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculatorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCalculatorActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        JFrame frame = new JFrame("EXIT");
+        if (JOptionPane.showConfirmDialog(frame, "Confirm if  you want to Exit?", "EXIT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_btnExitActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdministratorOptions;
     private javax.swing.JButton btnCalculator;
-    private javax.swing.JButton btnCreateNewUser;
     private javax.swing.JButton btnCurrencyConverter;
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogIn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblSubTittle;
+    private javax.swing.JLabel lblTittle;
     // End of variables declaration//GEN-END:variables
 }
+
+//(comment guide 1 cg1.0 start) inner class to rescale background image https://www.youtube.com/watch?v=CfKlAHInank
+class BackgroundPanel extends JPanel {
+
+    private Image backgroundImage ;
+
+    @Override
+    public void paint(Graphics g) {
+        backgroundImage = new ImageIcon (getClass().getResource("/images/green006400.png")).getImage();
+        
+        g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+        
+        setOpaque(false);
+        
+        super.paint(g);
+    }
+}
+//cg1.0 End

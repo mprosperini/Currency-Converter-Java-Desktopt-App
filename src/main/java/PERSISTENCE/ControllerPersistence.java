@@ -9,7 +9,7 @@ public class ControllerPersistence {
     
    public void save(Clients client1) {
         
-        HumanDataJpaController11.create(client1);
+        //HumanDataJpaController11.create(client1);
     }
     
 }
