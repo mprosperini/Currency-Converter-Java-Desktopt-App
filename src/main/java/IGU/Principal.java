@@ -39,10 +39,7 @@ public class Principal extends javax.swing.JFrame {
         lblTittle = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        btnLogIn = new javax.swing.JButton();
         btnCurrencyConverter = new javax.swing.JButton();
-        btnCalculator = new javax.swing.JButton();
-        btnAdministratorOptions = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         lblSubTittle = new javax.swing.JLabel();
 
@@ -70,13 +67,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnLogIn.setBackground(new java.awt.Color(51, 102, 153));
-        btnLogIn.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
-        btnLogIn.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogIn.setText("Log In");
-        btnLogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnLogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 166, -1));
-
         btnCurrencyConverter.setBackground(new java.awt.Color(51, 102, 153));
         btnCurrencyConverter.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
         btnCurrencyConverter.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,26 +77,7 @@ public class Principal extends javax.swing.JFrame {
                 btnCurrencyConverterActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCurrencyConverter, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 166, -1));
-
-        btnCalculator.setBackground(new java.awt.Color(51, 102, 153));
-        btnCalculator.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
-        btnCalculator.setForeground(new java.awt.Color(255, 255, 255));
-        btnCalculator.setText("Calculator");
-        btnCalculator.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCalculator.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalculatorActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnCalculator, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 166, -1));
-
-        btnAdministratorOptions.setBackground(new java.awt.Color(51, 102, 153));
-        btnAdministratorOptions.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
-        btnAdministratorOptions.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdministratorOptions.setText("Administrator Options");
-        btnAdministratorOptions.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnAdministratorOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 166, -1));
+        jPanel2.add(btnCurrencyConverter, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 166, -1));
 
         btnExit.setBackground(new java.awt.Color(96, 23, 23));
         btnExit.setFont(new java.awt.Font("Roboto", 1, 10)); // NOI18N
@@ -118,7 +89,7 @@ public class Principal extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        jPanel2.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 166, 31));
+        jPanel2.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 166, 31));
 
         lblSubTittle.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblSubTittle.setForeground(new java.awt.Color(0, 0, 0));
@@ -126,7 +97,7 @@ public class Principal extends javax.swing.JFrame {
         lblSubTittle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(lblSubTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 29));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 190, 200));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 190, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,10 +119,6 @@ public class Principal extends javax.swing.JFrame {
         displayCC.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCurrencyConverterActionPerformed
 
-    private void btnCalculatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculatorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCalculatorActionPerformed
-
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         JFrame frame = new JFrame("EXIT");
         if (JOptionPane.showConfirmDialog(frame, "Confirm if  you want to Exit?", "EXIT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
@@ -161,11 +128,8 @@ public class Principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdministratorOptions;
-    private javax.swing.JButton btnCalculator;
     private javax.swing.JButton btnCurrencyConverter;
     private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnLogIn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
