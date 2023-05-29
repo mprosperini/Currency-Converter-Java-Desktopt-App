@@ -8,7 +8,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
 
     public CurrencyConverter() {
         initComponents();
-        Image icon = new ImageIcon(this.getClass().getResource("/resources_imagesnew/mpc.png")).getImage();
+        Image icon = new ImageIcon(this.getClass().getResource("/images/mpc.png")).getImage();
         this.setIconImage(icon);
     }
 

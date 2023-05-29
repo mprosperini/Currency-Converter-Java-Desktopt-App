@@ -1,7 +1,6 @@
 package LOGIC;
 
 import IGU.Principal;
-import PERSISTENCE.ControllerPersistence;
 
 public class MainMethodLogic {
 
