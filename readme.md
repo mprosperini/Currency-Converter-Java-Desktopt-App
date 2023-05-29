@@ -1,7 +1,7 @@
 # Decrypt / Encrypt Web Page
-![light-mode-img](/img/readme/light-web.png "light-mode")
-![light-mode-img](/src/main/resources/images/readme/Currency-Converter.png "pp")
-![light-mode-img](/src/main/resources/images/readme/CurrencyConverter-Principal.png "p2")
+![App-Principal](/src/main/resources/images/readme/CurrencyConverter-Principal.png "App-Principal")
+![App-CurrencyConverter-App](/src/main/resources/images/readme/Currency-Converter.png "App-CurrencyConverter-App")
+
 
 <!-- [TOCM]
 
@@ -31,13 +31,7 @@ Avaiable Currencies to convert in this app are:
 
 ---------------
 ## Used Languages
-To create this web site the following languages were used
-
-- <img id="" src="/img/readme/html5-icon.svg" alt="Java" width="30" height="30" /> JAVA 
+To create this Desktop App the following languages were used
 
 - <img id="" src="/src/main/resources/images/readme/java-icon.svg" alt="Java" width="30" height="30" /> JAVA 
-
-
-
-
 
